@@ -12,10 +12,14 @@ module fa_module
 
     logic i0, i1, i2;
 
-    xor u0(i0, A, B);
+    i0= (A xor B);
 
-    and u2(i1, A, B);
+    i1= (A and B);
 
-    or u4(Cout, i1, i2);
+    i2= (i0 and Cin);
+
+    S= (i0 xor Cin);
+
+    Cout= (i1 or i2);
 
 endmodule: fa_module
